@@ -6,6 +6,14 @@ import (
 	"github.com/pkg/errors"
 )
 
+// TODO: merge: error.String looks like
+// // json.Unmarshal: EOF
+// fmt.Fprintf(os.Stderr, "%v\n", errors.Wrap(io.EOF, "json.Unmarshal"))
+// // EOF
+// // json.Unmarshal
+// //   <stack>
+// fmt.Fprintf(os.Stderr, "%+v\n", errors.Wrap(io.EOF, "json.Unmarshal"))
+
 func ExampleNew() {
 	err := errors.New("whoops")
 	fmt.Println(err)
